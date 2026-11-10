@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VYRON SECURITY</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080d18;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
+.container {
+  max-width: 550px;
+  margin: 50px auto;
+  background: #111c30;
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid #263b59;
+}
+h1 { color: #42c8ff; }
+p { color: #b8c8dc; }
+input {
+  width: 90%;
+  padding: 14px;
+  border-radius: 9px;
+  border: 1px solid #45617f;
+  margin: 15px 0;
+  font-size: 15px;
+  direction: ltr;
+}
+button {
+  background: #168bd1;
+  color: white;
+  border: 0;
+  padding: 13px 25px;
+  border-radius: 9px;
+  font-size: 16px;
+}
+#result {
+  text-align: right;
+  margin-top: 20px;
+  line-height: 2;
+}
+footer {
+  color: #71849e;
+  margin-top: 30px;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>VYRON SECURITY</h1>
+  <p>فحص إعدادات الحماية للمواقع</p>
+
+  <input id="url" type="url"
+  placeholder="https://example.com">
+
+  <br>
+  <button onclick="scan()">ابدأ الفحص</button>
+
+  <div id="result">
+    أدخل رابط موقع تملكه أو لديك إذن بفحصه.
+  </div>
+</div>
+
+<footer>
+VYRON SECURITY © 2026
+</footer>
+
+<script>
+async function scan() {
+  const result = document.getElementById("result");
+  const url = document.getElementById("url").value.trim();
+
+  if (!url.startsWith("https://")) {
+    result.innerHTML = "يرجى إدخال رابط يبدأ بـ https://";
+    return;
+  }
+
+  result.innerHTML =
+    "هذه الواجهة جاهزة، لكن يلزم ربطها بخادم فحص آمن حتى تعرض نتائج حقيقية.";
+}
+</script>
+</body>
+</html>
